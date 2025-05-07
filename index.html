@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi App Node</title>
+</head>
+<body>
+    <h1>Front Simple</h1>
+    <p id="mensaje">Cargando...</p>
+
+    <script>
+        fetch("/")
+            .then(response => {
+                document.getElementById("mensaje").textContent = "¡Solicitud enviada! Revisa la consola del servidor.";
+            })
+            .catch(error => {
+                document.getElementById("mensaje").textContent = "Error al conectarse al servidor.";
+                console.error(error);
+            });
+    </script>
+</body>
+</html>
